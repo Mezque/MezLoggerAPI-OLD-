@@ -13,3 +13,5 @@ MezLogger works simularly to `Melonlogger.Msg("Text")` , `Melonlogger.Warn("Text
 <h3 align="center"> This in its self is not a mod! This is an API for other mods to use on-screen messages! </h3> <br />
 A mod using this api to log melonloader console messages to your HUD can be found here https://github.com/Mezque/MezLoggerMod  <br />
  
+<h2 align="center"> Credits </h2>
+‣ Myself and Kaaku https://github.com/sankaaku for FumoClient, where the orignal logger comes from <br />
