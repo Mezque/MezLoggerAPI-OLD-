@@ -65,13 +65,18 @@ namespace MezLogger
         }
         private static IEnumerator MezText(string Text, int TextType, float timeBeforeDeletion)
         {
-            var textObj = Object.Instantiate(Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule/Text").gameObject, Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule").transform);
-            var textMesh = textObj.GetComponent<TextMeshProUGUI>();
+            GameObject textObj;
+            try
 
-            textMesh.text += TextType switch { 1 => "", 2 => "<color=red>[ERROR]</color> ", 3 => "<color=yellow>[Warning]</color> ", _ => "Something broke whoops" } + Text;
-            textObj.SetActive(true);
+            {
+                textObj = Object.Instantiate(Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule/Text").gameObject, Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule").transform);
+                var textMesh = textObj.GetComponent<TextMeshProUGUI>();
+                textMesh.text += TextType switch { 1 => "", 2 => "<color=red>[ERROR]</color> ", 3 => "<color=yellow>[Warning]</color> ", _ => "Something broke whoops" } + Text;
+                textObj.SetActive(true);
+            }
+            catch { yield break; }
             yield return new WaitForSeconds(timeBeforeDeletion);
-            GameObject.Destroy(textObj);
+            Obj.Destroy(textObj);
         }
     }
 }
