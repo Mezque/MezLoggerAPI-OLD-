@@ -16,8 +16,8 @@ namespace MezLogger
             MelonCoroutines.Start(MakeUI());
 
             MelonLogger.MsgCallbackHandler += (_, __, a, b) => Msg($"[{a}] {b}");
-            MelonLogger.MsgCallbackHandler += (a, b) => Msg($"[{a}] {b}");
-            MelonLogger.MsgCallbackHandler += (a, b) => Msg($"[{a}] {b}");
+            MelonLogger.WarningCallbackHandler += (a, b) => Msg($"[{a}] {b}");
+            MelonLogger.ErrorCallbackHandler += (a, b) => Msg($"[{a}] {b}");
         }
 
         // Just a notice to other developers planning on using this in their mods or clients, you will need to be using at least C# V8 to use this. I use V9 in my own projects. 
