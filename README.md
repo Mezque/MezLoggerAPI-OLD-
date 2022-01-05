@@ -1,4 +1,4 @@
-<h1 align="center"> MezLogger </h1>
+<h1 align="center"> MezLogger API </h1>
 <h1 align="center"> A simple easy to use on screen hud textAPI for VRChat mods using Melonloader! </h1>
 
 Instructions for usage, Download [MezLogger.cs](https://github.com/Mezque/MezLogger/blob/master/MezLogger/Mezlogger.cs "Mezlogger.cs") from the repo and import it into your project
