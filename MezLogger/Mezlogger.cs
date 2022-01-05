@@ -15,7 +15,7 @@ namespace MezLogger
 
         private static string ClientName = "MezLogger"; //Client Name or Mod Name, will be whatever text displays before the message.
         private static string PrimaryColour = "#6A329F"; //Colour of text "Client name"
-        private static Color SecondaryColour = new Color(0f, 1f, 1f, 1f); //Text Colour of the text that comes after the mods title
+        private static string SecondaryColour = "#a1dcff"; //Text Colour of the text that comes after the mods title
         private static Vector3 UIPosition = new Vector3(-20, -300, 0); //UI Position on screen (by default its right beside the mute button on the HUD - bare in mind the text has a slight curve to it the further you get away from the center)
         private static float TextSpacing = 25f; //Spacing between multiple notifications (Try not to set it too low to avoid text overlapping, I find this number works just fine)
 
@@ -42,7 +42,6 @@ namespace MezLogger
             GUI.gameObject.AddComponent<VerticalLayoutGroup>().spacing = TextSpacing;
 
             var textMesh = text.GetComponent<TextMeshProUGUI>();
-            textMesh.color = SecondaryColour;
             textMesh.alignment = TextAlignmentOptions.Left;
             textMesh.text = $"<color={PrimaryColour}>[{ClientName}]</color> ";
 
@@ -71,7 +70,7 @@ namespace MezLogger
             {
                 textObj = Object.Instantiate(Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule/Text").gameObject, Obj.Find("UserInterface/UnscaledUI/HudContent/Hud/AlertTextParent/Capsule").transform);
                 var textMesh = textObj.GetComponent<TextMeshProUGUI>();
-                textMesh.text += TextType switch { 1 => "", 2 => "<color=red>[ERROR]</color> ", 3 => "<color=yellow>[Warning]</color> ", _ => "Something broke whoops" } + Text;
+                textMesh.text += TextType switch { 1 => "", 2 => "<color=red>[ERROR]</color> ", 3 => "<color=yellow>[Warning]</color> ", _ => "Something broke whoops" } + $"<color={SecondaryColour}>{Text}</color>";
                 textObj.SetActive(true);
             }
             catch { yield break; }
