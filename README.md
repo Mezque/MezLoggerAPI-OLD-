@@ -11,5 +11,5 @@ Once you have imported MezLogger.cs into your project and have set it up you wil
 MezLogger works simularly to `Melonlogger.Msg("Text")` , `Melonlogger.Warn("Text")` & `Melonlogger.Error("Text")` but instead you write `MezLogger.Msg("Text", 2.5f)` , `MezLogger.Warn("Text", 2.5f)` or `MezLogger.Error("Text", 2.5f)` the float value after the text being how long its displayed on the HUD for (in seconds).<br />
  <h3>
 <h3 align="center"> This in its self is not a mod! This is an API for other mods to use on-screen messages! </h3> <br />
-A mod using this api to log melonloader console messages to your HUD can be found [here](https://github.com/Mezque/MezLoggerMod) <br />
+A mod using this api to log melonloader console messages to your HUD can be found [here]("https://github.com/Mezque/MezLoggerMod") <br />
  
